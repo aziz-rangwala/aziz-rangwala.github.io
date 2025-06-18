@@ -1,3 +1,4 @@
+
 import { ArrowRight, Github, Mail, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -60,10 +61,11 @@ const Index = () => {
               Alex Chen
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Home</a>
+              <a href="#home" className="text-blue-600 font-medium">Home</a>
               <Link to="/projects" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Projects</Link>
               <Link to="/blog" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Blog</Link>
-              <a href="#contact" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</a>
+              <Link to="/about" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">About</Link>
+              <a href="mailto:alex.chen@email.com" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</a>
               <ThemeToggle />
             </div>
             <div className="md:hidden">
