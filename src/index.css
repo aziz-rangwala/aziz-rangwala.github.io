@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -92,6 +93,123 @@
   }
 }
 
+/* Animated Gradient Background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-breathe {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+/* Light theme animated gradient */
+.animated-gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: linear-gradient(
+    -45deg,
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 69, 19, 0.08),
+    rgba(16, 185, 129, 0.1),
+    rgba(168, 85, 247, 0.1),
+    rgba(236, 72, 153, 0.08),
+    rgba(59, 130, 246, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 20s ease infinite;
+}
+
+.animated-gradient-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 20% 80%,
+    rgba(120, 119, 198, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(255, 119, 198, 0.08) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 40% 40%,
+    rgba(120, 219, 255, 0.1) 0%,
+    transparent 50%
+  );
+  animation: gradient-breathe 15s ease-in-out infinite;
+}
+
+/* Dark theme animated gradient */
+.dark .animated-gradient-bg {
+  background: linear-gradient(
+    -45deg,
+    rgba(30, 58, 138, 0.15),
+    rgba(91, 33, 182, 0.12),
+    rgba(6, 78, 59, 0.15),
+    rgba(88, 28, 135, 0.15),
+    rgba(157, 23, 77, 0.12),
+    rgba(30, 58, 138, 0.15)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 22s ease infinite;
+}
+
+.dark .animated-gradient-bg::before {
+  background: radial-gradient(
+    circle at 25% 75%,
+    rgba(99, 102, 241, 0.15) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 75% 25%,
+    rgba(168, 85, 247, 0.12) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 45% 55%,
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 50%
+  );
+  animation: gradient-breathe 18s ease-in-out infinite;
+}
+
+/* Frosted glass effect for cards and components */
+.frosted-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .frosted-glass {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -99,5 +217,17 @@
 
   body {
     @apply bg-background text-foreground;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    pointer-events: none;
   }
 }
