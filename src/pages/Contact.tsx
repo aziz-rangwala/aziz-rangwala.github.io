@@ -1,12 +1,12 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,11 +18,11 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    // Handle form submission here
     console.log("Form submitted:", formData);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -30,7 +30,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,92 +58,16 @@ const Contact = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Let's Work Together
+              Get In Touch
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Have an interesting project or opportunity? I'd love to hear about it. Let's discuss how we can build something amazing together.
+              Let's discuss opportunities, technical challenges, or collaborate on exciting projects.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <Card className="frosted-glass border-slate-200 dark:border-slate-700">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-slate-800 dark:text-slate-200">Get In Touch</CardTitle>
-                  <CardDescription className="text-slate-600 dark:text-slate-400">
-                    Ready to discuss your next project or just want to say hello? Drop me a message!
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-lg">
-                      <Mail className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-800 dark:text-slate-200">Email</p>
-                      <a href="mailto:alex.chen@email.com" className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                        alex.chen@email.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="bg-green-100 dark:bg-green-900/30 p-3 rounded-lg">
-                      <Phone className="h-5 w-5 text-green-600 dark:text-green-400" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-800 dark:text-slate-200">Phone</p>
-                      <a href="tel:+1234567890" className="text-slate-600 dark:text-slate-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
-                        +1 (234) 567-8900
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg">
-                      <MapPin className="h-5 w-5 text-purple-600 dark:text-purple-400" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-800 dark:text-slate-200">Location</p>
-                      <p className="text-slate-600 dark:text-slate-400">San Francisco, CA</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Social Links */}
-              <Card className="frosted-glass border-slate-200 dark:border-slate-700">
-                <CardHeader>
-                  <CardTitle className="text-xl text-slate-800 dark:text-slate-200">Connect With Me</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex gap-4">
-                    <Button variant="outline" size="sm" asChild className="flex-1">
-                      <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        GitHub
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" asChild className="flex-1">
-                      <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-4 w-4 mr-2" />
-                        LinkedIn
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" asChild className="flex-1">
-                      <a href="https://twitter.com/alexchen" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="h-4 w-4 mr-2" />
-                        Twitter
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
             {/* Contact Form */}
-            <Card className="frosted-glass border-slate-200 dark:border-slate-700">
+            <Card className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700">
               <CardHeader>
                 <CardTitle className="text-2xl text-slate-800 dark:text-slate-200">Send a Message</CardTitle>
                 <CardDescription className="text-slate-600 dark:text-slate-400">
@@ -160,11 +84,12 @@ const Contact = () => {
                       <Input
                         id="name"
                         name="name"
+                        type="text"
                         value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your name"
+                        onChange={handleChange}
                         required
-                        className="bg-white/80 dark:bg-slate-800/80"
+                        className="bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600"
+                        placeholder="Your name"
                       />
                     </div>
                     <div>
@@ -176,14 +101,14 @@ const Contact = () => {
                         name="email"
                         type="email"
                         value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="your.email@example.com"
+                        onChange={handleChange}
                         required
-                        className="bg-white/80 dark:bg-slate-800/80"
+                        className="bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600"
+                        placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
-
+                  
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Subject
@@ -191,14 +116,15 @@ const Contact = () => {
                     <Input
                       id="subject"
                       name="subject"
+                      type="text"
                       value={formData.subject}
-                      onChange={handleInputChange}
-                      placeholder="What's this about?"
+                      onChange={handleChange}
                       required
-                      className="bg-white/80 dark:bg-slate-800/80"
+                      className="bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600"
+                      placeholder="What's this about?"
                     />
                   </div>
-
+                  
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                       Message
@@ -207,21 +133,95 @@ const Contact = () => {
                       id="message"
                       name="message"
                       value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell me about your project or just say hello!"
-                      rows={6}
+                      onChange={handleChange}
                       required
-                      className="bg-white/80 dark:bg-slate-800/80"
+                      rows={6}
+                      className="bg-white dark:bg-slate-700 border-slate-300 dark:border-slate-600"
+                      placeholder="Tell me about your project or opportunity..."
                     />
                   </div>
-
-                  <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  >
                     <Send className="h-4 w-4 mr-2" />
                     Send Message
                   </Button>
                 </form>
               </CardContent>
             </Card>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              {/* Contact Details */}
+              <Card className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-slate-800 dark:text-slate-200">Contact Information</CardTitle>
+                  <CardDescription className="text-slate-600 dark:text-slate-400">
+                    Reach out through any of these channels
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                    <span>alex.chen.dev@email.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                    <Phone className="h-5 w-5 text-blue-600" />
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                    <MapPin className="h-5 w-5 text-blue-600" />
+                    <span>San Francisco, CA</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Social Links */}
+              <Card className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-slate-800 dark:text-slate-200">Connect</CardTitle>
+                  <CardDescription className="text-slate-600 dark:text-slate-400">
+                    Find me on these platforms
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex gap-4">
+                    <Button variant="outline" size="lg" asChild>
+                      <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer">
+                        <Github className="h-5 w-5" />
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="lg" asChild>
+                      <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="lg" asChild>
+                      <a href="https://twitter.com/alexchen" target="_blank" rel="noopener noreferrer">
+                        <Twitter className="h-5 w-5" />
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Availability */}
+              <Card className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700">
+                <CardHeader>
+                  <CardTitle className="text-2xl text-slate-800 dark:text-slate-200">Availability</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 text-slate-600 dark:text-slate-300">
+                    <p>🟢 <strong>Open to:</strong> Full-time opportunities</p>
+                    <p>🟡 <strong>Limited:</strong> Consulting projects</p>
+                    <p>⚡ <strong>Response time:</strong> Usually within 24 hours</p>
+                    <p>🌎 <strong>Remote:</strong> Available worldwide</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

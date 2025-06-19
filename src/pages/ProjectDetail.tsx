@@ -1,9 +1,9 @@
-
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Github, ExternalLink, Calendar, Code } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const ProjectDetail = () => {
   const { slug } = useParams();
@@ -31,31 +31,7 @@ const ProjectDetail = () => {
         "Zero data loss during planned/unplanned failovers"
       ],
       github: "https://github.com/username/distributed-kv",
-      demo: "#",
-      codeSnippet: `// Raft leader election implementation
-func (rf *Raft) StartElection() {
-    rf.mu.Lock()
-    defer rf.mu.Unlock()
-    
-    rf.state = Candidate
-    rf.currentTerm++
-    rf.votedFor = rf.me
-    rf.resetElectionTimer()
-    
-    args := RequestVoteArgs{
-        Term:         rf.currentTerm,
-        CandidateId:  rf.me,
-        LastLogIndex: len(rf.log) - 1,
-        LastLogTerm:  rf.log[len(rf.log)-1].Term,
-    }
-    
-    votes := 1
-    for i := range rf.peers {
-        if i != rf.me {
-            go rf.sendRequestVote(i, &args, &votes)
-        }
-    }
-}`
+      demo: "#"
     },
     "ai-optimizer": {
       title: "AI Pipeline Optimizer",
@@ -78,28 +54,7 @@ func (rf *Raft) StartElection() {
         "Enabled real-time personalization for 1M+ users"
       ],
       github: "https://github.com/username/ai-optimizer",
-      demo: "#",
-      codeSnippet: `# Dynamic batching implementation
-class DynamicBatcher:
-    def __init__(self, max_batch_size=32, max_wait_time=10):
-        self.max_batch_size = max_batch_size
-        self.max_wait_time = max_wait_time
-        self.pending_requests = []
-        
-    async def add_request(self, request):
-        self.pending_requests.append(request)
-        
-        if len(self.pending_requests) >= self.max_batch_size:
-            return await self.process_batch()
-        
-        await asyncio.sleep(self.max_wait_time / 1000)
-        if self.pending_requests:
-            return await self.process_batch()
-            
-    async def process_batch(self):
-        batch = self.pending_requests[:self.max_batch_size]
-        self.pending_requests = self.pending_requests[self.max_batch_size:]
-        return await self.model.predict_batch(batch)`
+      demo: "#"
     }
   };
 
@@ -127,12 +82,23 @@ class DynamicBatcher:
             <Link to="/" className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Alex Chen
             </Link>
-            <Link to="/projects">
-              <Button variant="ghost" className="flex items-center gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                All Projects
-              </Button>
-            </Link>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Home</Link>
+              <Link to="/projects" className="text-blue-600 font-medium">Projects</Link>
+              <Link to="/blog" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Blog</Link>
+              <Link to="/about" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">About</Link>
+              <Link to="/contact" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</Link>
+              <ThemeToggle />
+            </div>
+            <div className="md:hidden flex items-center gap-2">
+              <Link to="/projects">
+                <Button variant="ghost" className="flex items-center gap-2">
+                  <ArrowLeft className="h-4 w-4" />
+                  Projects
+                </Button>
+              </Link>
+              <ThemeToggle />
+            </div>
           </div>
         </div>
       </nav>
@@ -214,21 +180,6 @@ class DynamicBatcher:
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          </Card>
-
-          {/* Code Snippet */}
-          <Card className="mb-12 bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700">
-            <CardHeader>
-              <CardTitle className="text-xl text-blue-600 dark:text-blue-400 flex items-center gap-2">
-                <Code className="h-5 w-5" />
-                Key Implementation
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <pre className="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto text-sm">
-                <code>{project.codeSnippet}</code>
-              </pre>
             </CardContent>
           </Card>
 
