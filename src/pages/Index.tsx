@@ -1,4 +1,3 @@
-
 import { ArrowRight, Github, Mail, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -52,7 +51,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900">
+    <div className="min-h-screen">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,7 +64,7 @@ const Index = () => {
               <Link to="/projects" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Projects</Link>
               <Link to="/blog" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Blog</Link>
               <Link to="/about" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">About</Link>
-              <a href="mailto:alex.chen@email.com" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</a>
+              <Link to="/contact" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</Link>
               <ThemeToggle />
             </div>
             <div className="md:hidden">
@@ -229,10 +228,10 @@ const Index = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" asChild>
-              <a href="mailto:alex.chen@email.com">
+              <Link to="/contact">
                 <Mail className="h-5 w-5 mr-2" />
-                Send Email
-              </a>
+                Get In Touch
+              </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer">
