@@ -44,7 +44,7 @@ const Index = () => {
   };
 
   const highlights = [
-    "Built distributed KV store using Raft consensus algorithm",
+    "Led development of 15+ web scrapers",
     "Improved AI pipeline performance by 300%",
     "Reduced API latency from 300ms → 80ms",
     "Led migration of monolith to microservices (15+ services)"
@@ -57,7 +57,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Alex Chen
+              Aziz Rangwala
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#home" className="text-blue-600 font-medium">Home</a>
@@ -80,15 +80,14 @@ const Index = () => {
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                Alex Chen
+                Aziz Rangwala
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-4 font-medium">
               Software Engineer
             </h2>
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              Focused on building scalable distributed systems and AI infrastructure. 
-              I love solving complex problems and optimizing performance at scale.
+              Focused on building scalable systems, solving complex problems and optimizing performance at scale.
             </p>
           </div>
           
@@ -107,8 +106,7 @@ const Index = () => {
           <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-slate-200 dark:border-slate-700">
             <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-3">🚀 Currently Building</h3>
             <p className="text-slate-600 dark:text-slate-400">
-              Exploring distributed consensus algorithms and building a next-gen observability platform 
-              for microservices using eBPF and OpenTelemetry.
+              Chat application with an AI teammate that helps users complete tasks through natural conversations.
             </p>
           </div>
         </div>
@@ -234,13 +232,13 @@ const Index = () => {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/Azizchen" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5 mr-2" />
                 LinkedIn
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Azizchen" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 mr-2" />
                 GitHub
               </a>
@@ -256,7 +254,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-slate-800 dark:bg-slate-900 text-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="text-slate-400">© 2024 Alex Chen. Built with React, TypeScript, and lots of ☕</p>
+          <p className="text-slate-400">© 2024 Aziz Rangwala. Built with React, TypeScript, and lots of ☕</p>
         </div>
       </footer>
     </div>

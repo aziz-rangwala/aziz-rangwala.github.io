@@ -36,7 +36,7 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Alex Chen
+              Aziz Rangwala
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Home</Link>
@@ -165,7 +165,7 @@ const Contact = () => {
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                     <Mail className="h-5 w-5 text-blue-600" />
-                    <span>alex.chen.dev@email.com</span>
+                    <span>Aziz.chen.dev@email.com</span>
                   </div>
                   <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                     <Phone className="h-5 w-5 text-blue-600" />
@@ -189,17 +189,17 @@ const Contact = () => {
                 <CardContent>
                   <div className="flex gap-4">
                     <Button variant="outline" size="lg" asChild>
-                      <a href="https://github.com/alexchen" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/Azizchen" target="_blank" rel="noopener noreferrer">
                         <Github className="h-5 w-5" />
                       </a>
                     </Button>
                     <Button variant="outline" size="lg" asChild>
-                      <a href="https://linkedin.com/in/alexchen" target="_blank" rel="noopener noreferrer">
+                      <a href="https://linkedin.com/in/Azizchen" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="h-5 w-5" />
                       </a>
                     </Button>
                     <Button variant="outline" size="lg" asChild>
-                      <a href="https://twitter.com/alexchen" target="_blank" rel="noopener noreferrer">
+                      <a href="https://twitter.com/Azizchen" target="_blank" rel="noopener noreferrer">
                         <Twitter className="h-5 w-5" />
                       </a>
                     </Button>

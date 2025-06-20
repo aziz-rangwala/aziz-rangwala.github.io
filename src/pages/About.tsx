@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Code, Cpu, Database, Globe, Heart, Coffee, Book, Users } from "lucide-react";
+import { Code, Cpu, Database, Workflow, Heart, Volleyball, Book, ChefHat } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,32 +24,32 @@ const About = () => {
       description: "I love designing distributed systems that scale gracefully and handle failures with grace."
     },
     {
-      icon: Globe,
-      title: "Open Source Contributor",
-      description: "Building in the open, sharing knowledge, and learning from the global developer community."
+      icon: Workflow,
+      title: "Automation",
+      description: "Simplifying complex tasks and make life easier."
     }
   ];
 
   const personalTouches = [
     {
-      icon: Coffee,
-      title: "Fueled by Coffee",
-      description: "Third-wave coffee enthusiast. Currently exploring single-origin beans from Ethiopia."
+      icon: Volleyball,
+      title: "Tennis",
+      description: "I’m always up for a good rally, nothing beats that feeling of hitting a clean serve and chasing down every ball."
     },
     {
       icon: Book,
       title: "Continuous Learner",
-      description: "Always reading papers on distributed systems, consensus algorithms, or the latest in ML/AI."
+      description: "Always learning, be it tech, new dishes or about a new tool."
     },
     {
-      icon: Users,
-      title: "Team Player",
-      description: "Love mentoring junior developers and believe the best code comes from collaborative thinking."
+      icon: ChefHat,
+      title: "Cooking",
+      description: "I enjoy cooking, even the most mudane dishes are fun to make."
     },
     {
       icon: Heart,
       title: "Side Projects",
-      description: "Building tools that solve real problems, from CLI utilities to performance monitoring dashboards."
+      description: "Building tools that solve real problems."
     }
   ];
 
@@ -60,14 +60,14 @@ const About = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="font-bold text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Alex Chen
+              Aziz Rangwala
             </Link>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Home</Link>
               <Link to="/projects" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Projects</Link>
               <Link to="/blog" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Blog</Link>
               <span className="text-blue-600 font-medium">About</span>
-              <a href="mailto:alex.chen@email.com" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="mailto:Aziz.chen@email.com" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</a>
               <ThemeToggle />
             </div>
             <div className="md:hidden">
@@ -85,23 +85,22 @@ const About = () => {
               AC
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Hey, I'm Alex 👋
+              Hey, I'm Aziz 👋
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-              I'm a software engineer who gets excited about building systems that scale, 
-              optimizing performance bottlenecks, and creating tools that make developers' lives easier.
-              When I'm not debugging distributed systems, you'll find me contributing to open source 
-              or experimenting with the latest in AI infrastructure.
+            I'm a software engineer who enjoys building scalable backend systems,
+            optimizing performance bottlenecks, and diving deep into complex debugging challenges. 
+            I'm also passionate about infrastructure and cloud solutions—how systems are deployed, managed, and scaled.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2">
-                📍 San Francisco, CA
+                📍 Champaign, IL
               </Badge>
               <Badge variant="secondary" className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-4 py-2">
-                🌍 Open to Remote
+                🌍 Open to Remote | Hybrid | Onsite
               </Badge>
               <Badge variant="secondary" className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-4 py-2">
-                🚀 5+ Years Experience
+                🚀 2+ Years Experience
               </Badge>
             </div>
           </div>
@@ -183,12 +182,12 @@ const About = () => {
           <section className="text-center">
             <h2 className="text-3xl font-bold mb-6 text-slate-800 dark:text-slate-200">Let's Build Something Amazing</h2>
             <p className="text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
-              I'm always excited to discuss new opportunities, technical challenges, or just chat about the latest in distributed systems.
+              I'm always excited to discuss new opportunities, technical challenges, or just chat about how companies are solving challenging problems.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" asChild>
-                <a href="mailto:alex.chen@email.com">Get In Touch</a>
+                <a href="mailto:Aziz.chen@email.com">Get In Touch</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link to="/projects">View My Work</Link>
