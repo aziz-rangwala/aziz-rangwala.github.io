@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Mail, Linkedin } from "lucide-react";
+import { ArrowRight, Github, Mail, Linkedin, Calendar, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -48,6 +48,48 @@ const Index = () => {
     "Improved AI pipeline performance by 300%",
     "Reduced API latency from 300ms → 80ms",
     "Led migration of monolith to microservices (15+ services)"
+  ];
+
+  const experience = [
+    {
+      company: "TechFlow Systems",
+      position: "Senior Software Engineer",
+      duration: "2022 - Present",
+      location: "San Francisco, CA",
+      description: "Leading the development of distributed systems and AI infrastructure. Built high-performance microservices handling 10M+ requests daily.",
+      achievements: [
+        "Architected distributed KV store with 99.9% uptime",
+        "Reduced system latency by 65% through performance optimization",
+        "Led team of 5 engineers in microservices migration"
+      ],
+      technologies: ["Go", "Kubernetes", "PostgreSQL", "Redis", "AWS"]
+    },
+    {
+      company: "DataStream Analytics",
+      position: "Software Engineer",
+      duration: "2020 - 2022",
+      location: "Palo Alto, CA",
+      description: "Developed real-time data processing pipelines and machine learning infrastructure for analytics platform serving 1000+ enterprise clients.",
+      achievements: [
+        "Built ML inference pipeline improving throughput by 300%",
+        "Implemented real-time analytics engine processing 1M+ events/sec",
+        "Optimized database queries reducing response time by 80%"
+      ],
+      technologies: ["Python", "Apache Kafka", "TensorFlow", "ClickHouse", "Docker"]
+    },
+    {
+      company: "StartupLab Inc",
+      position: "Full Stack Developer",
+      duration: "2019 - 2020",
+      location: "Mountain View, CA",
+      description: "Built end-to-end web applications and APIs for early-stage startups. Collaborated with product teams to deliver MVP solutions.",
+      achievements: [
+        "Developed 3 full-stack applications from concept to production",
+        "Implemented CI/CD pipelines improving deployment speed by 90%",
+        "Built REST APIs serving 100K+ daily active users"
+      ],
+      technologies: ["TypeScript", "React", "Node.js", "MongoDB", "AWS"]
+    }
   ];
 
   return (
@@ -186,6 +228,72 @@ const Index = () => {
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/40 dark:bg-slate-800/40">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4 text-slate-800 dark:text-slate-200">Professional Experience</h2>
+          <p className="text-xl text-slate-600 dark:text-slate-400 text-center mb-16 max-w-3xl mx-auto">
+            Building scalable systems and leading engineering teams across fast-growing tech companies.
+          </p>
+          
+          <div className="space-y-8">
+            {experience.map((job, index) => (
+              <Card key={index} className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300">
+                <CardHeader>
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div className="flex-1">
+                      <CardTitle className="text-xl text-slate-800 dark:text-slate-200 mb-1">
+                        {job.position}
+                      </CardTitle>
+                      <div className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                        {job.company}
+                      </div>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-4 w-4" />
+                          {job.duration}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4" />
+                          {job.location}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <CardDescription className="text-slate-600 dark:text-slate-400 leading-relaxed mt-3">
+                    {job.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="mb-4">
+                    <h4 className="font-medium text-slate-800 dark:text-slate-200 mb-2">Key Achievements:</h4>
+                    <ul className="space-y-1">
+                      {job.achievements.map((achievement, achievementIndex) => (
+                        <li key={achievementIndex} className="text-slate-600 dark:text-slate-400 flex items-start gap-2">
+                          <span className="text-green-500 mt-1">•</span>
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-medium text-slate-800 dark:text-slate-200 mb-2">Technologies:</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {job.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
