@@ -13,56 +13,46 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "How I debugged a flaky AI socket connection",
-      excerpt: "Tracking down intermittent WebSocket disconnections in a production ML inference pipeline and the debugging techniques that saved the day.",
-      content: "Deep dive into debugging network issues, connection pooling, and implementing robust retry mechanisms...",
-      tags: ["AI", "Debugging", "WebSockets", "Production"],
-      date: "2024-01-15",
-      readTime: "8 min read",
-      slug: "debugging-flaky-ai-socket-connection"
+      title: "How to Design Scalable Systems: A Step-by-Step Guide",
+      excerpt: "A structured approach to architecting scalable backend systems inspired by HelloInterview.",
+      content: `Designing scalable systems is a critical skill for software engineers. This guide walks you through clarifying requirements, defining APIs, creating high-level architectures, addressing bottlenecks, ensuring fault tolerance, security, and observability. For deeper practice, check HelloInterview's System Design resources.`,
+      tags: ["System Design", "Backend", "Scalability", "Architecture"],
+      date: "2025-06-20",
+      readTime: "12 min read",
+      slug: "design-scalable-systems-guide"
     },
     {
       id: 2,
-      title: "Why we chose 2PC for cross-shard Raft KV store",
-      excerpt: "Exploring the trade-offs between different consensus algorithms and why Two-Phase Commit was the right choice for our distributed system.",
-      content: "Analysis of distributed consensus protocols, CAP theorem implications, and real-world performance considerations...",
-      tags: ["Distributed Systems", "Raft", "2PC", "Architecture"],
-      date: "2024-01-08",
-      readTime: "12 min read",
-      slug: "2pc-cross-shard-raft-kv-store"
+      title: "Designing Microservices for Failure: Avoiding Cascading Outages",
+      excerpt: "Learn how to build resilient microservices that prevent failures from cascading and causing system-wide outages.",
+      content: `Failures in distributed systems are inevitable. This post covers common pitfalls like missing timeouts and infinite retries, and introduces resilience patterns such as circuit breakers, bulkheads, fallbacks, and timeouts to build robust microservices that survive failures gracefully.`,
+      tags: ["Microservices", "Resilience", "System Design", "Reliability"],
+      date: "2025-06-18",
+      readTime: "10 min read",
+      slug: "microservices-failure-design"
     },
     {
       id: 3,
-      title: "Scraping fast, secure sites without Selenium",
-      excerpt: "Building a high-performance web scraper that bypasses modern anti-bot measures using Go and native HTTP libraries.",
-      content: "Techniques for efficient web scraping, handling JavaScript-heavy sites, and maintaining ethical scraping practices...",
-      tags: ["Go", "Web Scraping", "Performance", "Security"],
-      date: "2024-01-01",
-      readTime: "6 min read",
-      slug: "fast-web-scraping-without-selenium"
+      title: "Zero-Downtime Database Migrations: A Practical Guide",
+      excerpt: "How to migrate databases in production environments without impacting uptime or user experience.",
+      content: `Database migrations are critical but risky in live environments. This article discusses techniques like blue-green deployments, feature toggles, backward-compatible schema changes, and phased rollouts to ensure zero downtime and seamless user experiences during database upgrades.`,
+      tags: ["Database", "DevOps", "Infrastructure", "Migrations"],
+      date: "2025-06-15",
+      readTime: "9 min read",
+      slug: "zero-downtime-database-migrations"
     },
     {
       id: 4,
-      title: "Optimizing Docker builds for ML workloads",
-      excerpt: "Reducing Docker image sizes by 70% and build times by 50% for machine learning applications through layer optimization and multi-stage builds.",
-      content: "Best practices for containerizing ML applications, dependency management, and CI/CD optimization...",
-      tags: ["Docker", "ML", "DevOps", "Optimization"],
-      date: "2023-12-20",
-      readTime: "10 min read",
-      slug: "optimizing-docker-builds-ml-workloads"
-    },
-    {
-      id: 5,
-      title: "Building a real-time metrics dashboard with eBPF",
-      excerpt: "Creating low-overhead system monitoring using eBPF programs and visualizing performance metrics in real-time.",
-      content: "Implementation guide for eBPF-based monitoring, kernel programming, and building responsive dashboards...",
-      tags: ["eBPF", "Monitoring", "Systems", "Observability"],
-      date: "2023-12-10",
-      readTime: "15 min read",
-      slug: "realtime-metrics-dashboard-ebpf"
+      title: "Efficient Infrastructure Monitoring with Prometheus and Grafana",
+      excerpt: "A hands-on guide to setting up real-time monitoring and alerting for cloud-native applications.",
+      content: `Monitoring infrastructure is essential for reliable operations. Learn how to use Prometheus to collect metrics, Grafana to visualize data, and implement alerting rules to detect issues early. Includes tips on labeling, federation, and scaling monitoring stacks for large environments.`,
+      tags: ["Monitoring", "Prometheus", "Grafana", "Infrastructure"],
+      date: "2025-06-10",
+      readTime: "11 min read",
+      slug: "infrastructure-monitoring-prometheus-grafana"
     }
   ];
-
+  
   const filteredPosts = blogPosts.filter(post =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||

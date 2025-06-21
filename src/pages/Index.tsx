@@ -9,86 +9,85 @@ const Index = () => {
   const projects = [
     {
       title: "Distributed KV Store",
-      description: "Built a high-performance distributed key-value store using Raft consensus algorithm, achieving 99.9% uptime across 5-node clusters.",
-      stack: ["Go", "Raft", "PostgreSQL", "Docker"],
-      impact: "Reduced data retrieval latency by 65%",
-      github: "https://github.com/username/distributed-kv",
+      description: "Built a high-performance distributed key-value store using Raft consensus algorithm, with transactional sharding and snapshotting.",
+      stack: ["Go", "Raft", "REST"],
+      impact: "Implemented two-phase lock (2PL) and two-phase commit (2PC) for atomic cross-shard transaction",
+      github: "https://github.com/aziz-rangwala/distributed-kv",
       demo: "#",
       slug: "distributed-kv"
     },
     {
-      title: "AI Pipeline Optimizer",
-      description: "Optimized machine learning inference pipeline for real-time predictions, implementing efficient batching and caching strategies.",
-      stack: ["Python", "TensorFlow", "Redis", "Kubernetes"],
-      impact: "Improved throughput by 3x",
-      github: "https://github.com/username/ai-optimizer",
+      title: "Easy Presentor",
+      description: "AI-powered smart presentation platform for real-time speech-to-text and slide highlights using Kafka and BERT.",
+      stack: ["Python", "Django", "Kafka", "PostgreSQL", "Kubernetes"],
+      impact: "Enhanced presentor-audience engagement by 40%",
+      github: "https://github.com/aziz-rangwala/ai-optimizer",
       demo: "#",
       slug: "ai-optimizer"
     },
     {
-      title: "Real-time Analytics Engine",
-      description: "Designed and implemented a real-time data processing system handling 1M+ events per second with sub-100ms latency.",
-      stack: ["Rust", "Apache Kafka", "ClickHouse", "gRPC"],
-      impact: "Reduced API latency from 300ms → 80ms",
-      github: "https://github.com/username/analytics-engine",
+      title: "Scalable Cloud GitOps",
+      description: "Built a cost-optimized, auto-scaling GitOps infrastructure with Terraform, Argo CD, and Kubernetes, improving resilience and response time.",
+      stack: ["Terraform", "Kubernetes", "Grafana", "Prometheus", "AWS"],
+      impact: "Improved resilience and cut incident response time by 40% through chaos testing and monitoring under 10x load",
+      github: "https://github.com/aziz-rangwala/analytics-engine",
       demo: "#",
       slug: "analytics-engine"
     }
   ];
 
   const skills = {
-    "Languages": ["Go", "Rust", "Python", "TypeScript", "C++"],
-    "Systems": ["Docker", "Kubernetes", "PostgreSQL", "Redis", "Apache Kafka"],
-    "Cloud": ["AWS", "GCP", "Terraform", "Monitoring & Observability"],
-    "Specialties": ["Distributed Systems", "Performance Optimization", "AI/ML Infrastructure"]
+    "Languages": ["Python", "C#", "Java", "TypeScript", "SQL", "Go"],
+    "Frameworks & Tools": ["Flask", "Node.js", ".NET", "Kafka", "Selenium", "AWS Lambda", "Git", "Jira", "Spark"],
+    "Infrastructure & DevOps": ["Docker", "Terraform", "Kubernetes", "Ansible", "Grafana", "Prometheus", "AWS", "Azure", "Linux"],
+    "Databases": ["Snowflake", "PostgreSQL", "MongoDB", "Redis", "RDS", "S3", "Elasticsearch"]
   };
 
   const highlights = [
     "Led development of 15+ web scrapers",
-    "Improved AI pipeline performance by 300%",
-    "Reduced API latency from 300ms → 80ms",
-    "Led migration of monolith to microservices (15+ services)"
+    "Improved AI pipeline performance by 42%",
+    "Managed and optimized a cloud data platform for a major client",
+    "Built a distributed key value store"
   ];
 
   const experience = [
     {
-      company: "TechFlow Systems",
-      position: "Senior Software Engineer",
-      duration: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Leading the development of distributed systems and AI infrastructure. Built high-performance microservices handling 10M+ requests daily.",
+      company: "Learning and Language Analytics Lab",
+      position: "Student Researcher",
+      duration: "Feb 2025 - Present",
+      location: "Remote",
+      description: "Working on scalable AI systems and real-time language processing.",
       achievements: [
-        "Architected distributed KV store with 99.9% uptime",
-        "Reduced system latency by 65% through performance optimization",
-        "Led team of 5 engineers in microservices migration"
+        "Boosted inference accuracy by 18% through pipeline improvements",
+        "Optimized response generation for low-latency performance"
       ],
-      technologies: ["Go", "Kubernetes", "PostgreSQL", "Redis", "AWS"]
+      technologies: ["Python", "Flask", "PostgreSQL", "Redis", "AWS"]
     },
     {
-      company: "DataStream Analytics",
+      company: "Ria Money Transfer",
       position: "Software Engineer",
-      duration: "2020 - 2022",
-      location: "Palo Alto, CA",
-      description: "Developed real-time data processing pipelines and machine learning infrastructure for analytics platform serving 1000+ enterprise clients.",
+      duration: "Jun 2024 - Dec 2024",
+      location: "Buena Park, CA",
+      description: "Built scalable scraping infrastructure and backend systems for pricing-intelligence",
       achievements: [
-        "Built ML inference pipeline improving throughput by 300%",
-        "Implemented real-time analytics engine processing 1M+ events/sec",
-        "Optimized database queries reducing response time by 80%"
+        "Led development of 15+ Selenium scrapers, cutting manual effort by 80%",
+        "Reverse-engineered 5+ APIs for reliable, anti-bot-resistant data collection",
+        "Designed REST APIs and a parallel scraping system, reducing retrieval time by 60%"
       ],
-      technologies: ["Python", "Apache Kafka", "TensorFlow", "ClickHouse", "Docker"]
+      technologies: ["C#", ".NET", "MongoDB", "Selenium", "Git", "Jira"]
     },
     {
-      company: "StartupLab Inc",
-      position: "Full Stack Developer",
-      duration: "2019 - 2020",
-      location: "Mountain View, CA",
-      description: "Built end-to-end web applications and APIs for early-stage startups. Collaborated with product teams to deliver MVP solutions.",
+      company: "Quantiphi",
+      position: "Framework Engineer",
+      duration: "Jul 2021 - Aug 2023",
+      location: "Mumbai, India",
+      description: "Engineered cloud-based data pipelines, automated workflows, and CI/CD systems to support data-warehousing and analytics",
       achievements: [
-        "Developed 3 full-stack applications from concept to production",
-        "Implemented CI/CD pipelines improving deployment speed by 90%",
-        "Built REST APIs serving 100K+ daily active users"
+        "Automated 50GB+ daily loads in Snowflake with JS/SQL scripts, improving efficiency by 30%",
+        "Developed AWS Glue/Lambda ETL for medical data, tripling dashboard insight speed",
+        "Automated QA and monitoring, cutting manual testing by 90% and accelerating defect resolution 16x"
       ],
-      technologies: ["TypeScript", "React", "Node.js", "MongoDB", "AWS"]
+      technologies: ["Python", "JavaScript", "SQL", "Snowflake", "AWS", "Azure DevOps"]
     }
   ];
 
@@ -157,7 +156,7 @@ const Index = () => {
       {/* Quick Highlights */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/40 dark:bg-slate-800/40">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">Impact Highlights</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">Highlights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {highlights.map((highlight, index) => (
               <Card key={index} className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -173,10 +172,10 @@ const Index = () => {
       {/* Featured Projects */}
       <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-slate-800 dark:text-slate-200">Featured Projects</h2>
-          <p className="text-xl text-slate-600 dark:text-slate-400 text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4 text-slate-800 dark:text-slate-200">Projects</h2>
+          {/* <p className="text-xl text-slate-600 dark:text-slate-400 text-center mb-16 max-w-3xl mx-auto">
             A selection of projects showcasing my expertise in distributed systems, performance optimization, and infrastructure.
-          </p>
+          </p> */}
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
@@ -329,7 +328,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-slate-800 dark:text-slate-200">Let's Build Something Amazing</h2>
           <p className="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
-            I'm always interested in discussing new opportunities, technical challenges, or just geeking out about distributed systems.
+            I'm always interested in discussing new opportunities, technical challenges, or just geeking out about backend systems.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -340,13 +339,13 @@ const Index = () => {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://linkedin.com/in/Azizchen" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/aziz-rangwala" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="h-5 w-5 mr-2" />
                 LinkedIn
               </a>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com/Azizchen" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/aziz-rangwala" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 mr-2" />
                 GitHub
               </a>
@@ -354,7 +353,7 @@ const Index = () => {
           </div>
           
           <div className="mt-12 text-slate-500 dark:text-slate-400">
-            <p>📍 Based in San Francisco, CA • Open to remote opportunities</p>
+            <p>📍 Based in Champaign, IL • Open to Hybrid | Remote | Onsite opportunities</p>
           </div>
         </div>
       </section>

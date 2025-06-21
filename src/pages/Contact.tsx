@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, CheckCircle, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,11 +14,48 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage("");
+
+    try {
+      // Simulate API call delay
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // For now, we'll use a mailto link as a fallback
+      // In a real app, you'd integrate with EmailJS, Formspree, or your own backend
+      const mailtoLink = `mailto:azizyrangwala@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+      
+      // Open email client
+      window.open(mailtoLink, '_blank');
+      
+      // Show success message
+      setSubmitStatus('success');
+      setSubmitMessage("Thank you! Your message has been sent. I'll get back to you soon!");
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+      
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage("Sorry, there was an error sending your message. Please try again or email me directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -143,11 +179,45 @@ const Contact = () => {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send className="h-4 w-4 mr-2" />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="h-4 w-4 mr-2" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
+                  
+                  {/* Status Message */}
+                  {submitStatus !== 'idle' && (
+                    <div className={`mt-4 p-4 rounded-lg border ${
+                      submitStatus === 'success' 
+                        ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800' 
+                        : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+                    }`}>
+                      <div className="flex items-center gap-2">
+                        {submitStatus === 'success' ? (
+                          <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400" />
+                        ) : (
+                          <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" />
+                        )}
+                        <span className={`text-sm font-medium ${
+                          submitStatus === 'success' 
+                            ? 'text-green-800 dark:text-green-200' 
+                            : 'text-red-800 dark:text-red-200'
+                        }`}>
+                          {submitMessage}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </form>
               </CardContent>
             </Card>
@@ -165,15 +235,15 @@ const Contact = () => {
                 <CardContent className="space-y-4">
                   <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                     <Mail className="h-5 w-5 text-blue-600" />
-                    <span>Aziz.chen.dev@email.com</span>
+                    <span>azizyrangwala@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                     <Phone className="h-5 w-5 text-blue-600" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+1 ---</span>
                   </div>
                   <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
                     <MapPin className="h-5 w-5 text-blue-600" />
-                    <span>San Francisco, CA</span>
+                    <span>Irvine, CA</span>
                   </div>
                 </CardContent>
               </Card>
@@ -189,18 +259,13 @@ const Contact = () => {
                 <CardContent>
                   <div className="flex gap-4">
                     <Button variant="outline" size="lg" asChild>
-                      <a href="https://github.com/Azizchen" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/aziz-rangwala" target="_blank" rel="noopener noreferrer">
                         <Github className="h-5 w-5" />
                       </a>
                     </Button>
                     <Button variant="outline" size="lg" asChild>
-                      <a href="https://linkedin.com/in/Azizchen" target="_blank" rel="noopener noreferrer">
+                      <a href="https://linkedin.com/in/aziz-rangwala" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="lg" asChild>
-                      <a href="https://twitter.com/Azizchen" target="_blank" rel="noopener noreferrer">
-                        <Twitter className="h-5 w-5" />
                       </a>
                     </Button>
                   </div>

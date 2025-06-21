@@ -67,7 +67,7 @@ const About = () => {
               <Link to="/projects" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Projects</Link>
               <Link to="/blog" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Blog</Link>
               <span className="text-blue-600 font-medium">About</span>
-              <a href="mailto:Aziz.chen@email.com" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</a>
+              <Link to="/contact" className="text-slate-700 dark:text-slate-300 hover:text-blue-600 transition-colors">Contact</Link>
               <ThemeToggle />
             </div>
             <div className="md:hidden">
@@ -82,7 +82,7 @@ const About = () => {
           {/* Hero Section */}
           <div className="text-center mb-20">
             <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
-              AC
+              AR
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Hey, I'm Aziz 👋
@@ -187,7 +187,7 @@ const About = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700" asChild>
-                <a href="mailto:Aziz.chen@email.com">Get In Touch</a>
+                <a href="mailto:azizyrangwala@gmail.com">Get In Touch</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link to="/projects">View My Work</Link>

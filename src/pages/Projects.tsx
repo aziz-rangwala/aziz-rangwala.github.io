@@ -13,84 +13,109 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Distributed KV Store",
-      description: "Built a high-performance distributed key-value store using Raft consensus algorithm, achieving 99.9% uptime across 5-node clusters.",
-      stack: ["Go", "Raft", "PostgreSQL", "Docker"],
-      category: "Systems",
-      impact: "Reduced data retrieval latency by 65%",
-      github: "https://github.com/username/distributed-kv",
-      demo: "#",
-      slug: "distributed-kv",
-      year: "2024"
+      "title": "Distributed KV Store",
+      "description": "Built a fault-tolerant key-value store using Raft with etcd-style REST APIs, sharding, and BoltDB-based snapshotting.",
+      "stack": ["Go", "Raft", "BoltDB"],
+      "category": ["Systems","Backend"],
+      "impact": "Enabled atomic cross-shard transactions and improved fault tolerance through 2PC and 2PL.",
+      "github": "https://github.com/username/distributed-kv-store",
+      "demo": "#",
+      "slug": "distributed-kv",
+      "year": "2024"
     },
     {
-      title: "AI Pipeline Optimizer",
-      description: "Optimized machine learning inference pipeline for real-time predictions, implementing efficient batching and caching strategies.",
-      stack: ["Python", "TensorFlow", "Redis", "Kubernetes"],
-      category: "AI",
-      impact: "Improved throughput by 3x",
-      github: "https://github.com/username/ai-optimizer",
-      demo: "#",
-      slug: "ai-optimizer",
-      year: "2024"
+      "title": "Easy Presentor",
+      "description": "AI-powered platform enhancing presenter-audience engagement with real-time speech-to-text and intelligent slide highlights.",
+      "stack": ["Python", "Django", "Kafka", "PostgreSQL", "Docker", "Kubernetes", "BERT"],
+      "category": ["AI","Systems","Backend", "Data Engineering"],
+      "impact": "Reduced latency to 400ms and improved comprehension by 40%; ensured 99.9% uptime with Kubernetes autoscaling.",
+      "github": "https://github.com/username/Easy-Presentor",
+      "demo": "#",
+      "slug": "easy-presentor",
+      "year": "2024"
+    },    
+    {
+      "title": "Scalable Cloud GitOps",
+      "description": "Optimized cloud infrastructure for cost and uptime using GitOps and autoscaling strategies.",
+      "stack": ["Docker","Terraform", "Kubernetes", "Prometheus", "Grafana", "AWS", "Argo CD", "Chaos Mesh"],
+      "category": ["DevOps","Cloud", "Infra"],
+      "impact": "Improved resilience and reduced incident response time by 40% under 10x load.",
+      "github": "https://github.com/username/scalable-cloud-gitops",
+      "demo": "#",
+      "slug": "scalable-cloud-gitops",
+      "year": "2024"
     },
     {
-      title: "Real-time Analytics Engine",
-      description: "Designed and implemented a real-time data processing system handling 1M+ events per second with sub-100ms latency.",
-      stack: ["Rust", "Apache Kafka", "ClickHouse", "gRPC"],
-      category: "Systems",
-      impact: "Reduced API latency from 300ms → 80ms",
-      github: "https://github.com/username/analytics-engine",
-      demo: "#",
-      slug: "analytics-engine",
-      year: "2023"
+      "title": "RAG-powered PDF Chat Application",
+      "description": "Built a retrieval-augmented app to chat with PDFs, enabling context-aware conversations over documents.",
+      "stack": ["Python", "LangChain", "Streamlit", "LLM"],
+      "category": ["AI"],
+      "impact": "Reduced manual analysis time by 60%.",
+      "github": "https://github.com/username/pdf-chat-app",
+      "demo": "#",
+      "slug": "pdf-chat-app",
+      "year": "2024"
     },
     {
-      title: "Microservices Orchestrator",
-      description: "Built a container orchestration platform with auto-scaling, service discovery, and health monitoring capabilities.",
-      stack: ["Go", "Docker", "Kubernetes", "etcd"],
-      category: "Systems",
-      impact: "Reduced deployment time by 80%",
-      github: "https://github.com/username/microservices-orchestrator",
-      demo: "#",
-      slug: "microservices-orchestrator",
-      year: "2023"
+      "title": "OneClick",
+      "description": "One-click content publishing tool with AI-generated captions, hashtags, and visuals for social platforms.",
+      "stack": ["Next.js", "GraphQL", "OpenAI"],
+      "category": ["AI","Productivity","Backend"],
+      "impact": "Reduced content creation time by 5x; achieved <400ms latency for bulk posting.",
+      "github": "https://github.com/username/oneclick",
+      "demo": "#",
+      "slug": "oneclick",
+      "year": "2024"
     },
     {
-      title: "Neural Network Accelerator",
-      description: "Developed CUDA kernels for accelerating transformer model training with custom memory management and optimization techniques.",
-      stack: ["CUDA", "C++", "Python", "PyTorch"],
-      category: "AI",
-      impact: "Achieved 4x speedup in training time",
-      github: "https://github.com/username/neural-accelerator",
-      demo: "#",
-      slug: "neural-accelerator",
-      year: "2023"
+      "title": "Medical Supply Chain",
+      "description": "Blockchain-based supply chain system for tamper-proof drug traceability.",
+      "stack": ["Node.js", "Express", "PostgreSQL", "HyperLedger Fabric", "Docker", "Redis"],
+      "category": ["Blockchain","Systems","Backend"],
+      "impact": "Cut API latency by 3x and ensured real-time traceability.",
+      "github": "https://github.com/username/medical-supply-chain",
+      "demo": "#",
+      "slug": "medical-supply-chain",
+      "year": "2024"
     },
     {
-      title: "Blockchain Consensus Engine",
-      description: "Implemented a novel consensus mechanism combining proof-of-stake with practical Byzantine fault tolerance for enterprise applications.",
-      stack: ["Go", "Cryptography", "P2P", "gRPC"],
-      category: "Systems",
-      impact: "Achieved 10k+ TPS with finality",
-      github: "https://github.com/username/blockchain-consensus",
-      demo: "#",
-      slug: "blockchain-consensus",
-      year: "2022"
-    }
+      "title": "Waste Collection Assistor",
+      "description": "Real-time waste collection system with geospatial tracking and ML-based classification.",
+      "stack": ["Python", "Node.js", "Flask", "Redis", "Keras", "AWS", "Redis"],
+      "category": ["Backend", "Data Engineering"],
+      "impact": "Improved route efficiency by 40% and achieved 93.5% classification accuracy.",
+      "github": "https://github.com/username/waste-collection-assistor",
+      "demo": "#",
+      "slug": "waste-collection-assistor",
+      "year": "2024"
+    },
+    {
+      "title": "DataNova",
+      "description": "Distributed data processing pipeline with real-time event handling and workflow orchestration.",
+      "stack": ["Python", "Spark", "Airflow", "Kafka", "Cassandra", "Docker"],
+      "category": ["Data Engineering"],
+      "impact": "Processed 100K+ events/sec with fault tolerance; automated orchestration reduced overhead.",
+      "github": "https://github.com/username/datanova",
+      "demo": "#",
+      "slug": "datanova",
+      "year": "2024"
+    }            
   ];
 
   // Get all unique stack technologies and categories
   const allStacks = Array.from(new Set(projects.flatMap(p => p.stack)));
-  const allCategories = Array.from(new Set(projects.map(p => p.category)));
+  const allCategories = Array.from(new Set(projects.flatMap(p => p.category)));
 
   const filteredProjects = projects.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          project.stack.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
     
-    const matchesStack = selectedStack.length === 0 || 
-                        selectedStack.some(stack => project.stack.includes(stack) || project.category === stack);
+                         const matchesStack = selectedStack.length === 0 || 
+                         selectedStack.some(stack => 
+                            project.stack.includes(stack) || 
+                            project.category.includes(stack) // <-- here changed to includes
+                         );    
     
     return matchesSearch && matchesStack;
   });
@@ -132,10 +157,10 @@ const Projects = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Featured Projects
+              Projects
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              A collection of projects showcasing expertise in distributed systems, AI infrastructure, and performance optimization.
+              A collection of projects solving real-world problems.
             </p>
           </div>
 
@@ -211,14 +236,15 @@ const Projects = () => {
             {filteredProjects.map((project, index) => (
               <Card key={index} className="bg-white/80 dark:bg-slate-800/80 border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline" className="border-slate-300 dark:border-slate-600">
-                      {project.year}
-                    </Badge>
-                    <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-200 border-0">
-                      {project.category}
-                    </Badge>
-                  </div>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge variant="outline" className="border-slate-300 dark:border-slate-600">
+                    {project.year}
+                  </Badge>
+                  <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-200 border-0">
+                    {project.category.join(" | ")}
+                  </Badge>
+                </div>
+
                   
                   <CardTitle className="text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     <Link to={`/projects/${project.slug}`}>
